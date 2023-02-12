@@ -1,6 +1,6 @@
-# Ant Design
+# Yuan Design
 
-Ant Design 是基于vite和vue3的UI组件库
+Yuan Design 是基于vite和vue3的UI组件库
 
 <div class="pic-plus">
   <img width="150" src="/logo.png">

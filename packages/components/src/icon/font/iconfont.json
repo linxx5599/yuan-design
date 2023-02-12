@@ -1,0 +1,107 @@
+{
+  "id": "3891816",
+  "name": "yuan-design",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "34022904",
+      "name": "add_line",
+      "font_class": "add_line",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "34022912",
+      "name": "alert_line",
+      "font_class": "alert_line",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "34022920",
+      "name": "arrow_down_line",
+      "font_class": "arrow_down_line",
+      "unicode": "e717",
+      "unicode_decimal": 59159
+    },
+    {
+      "icon_id": "34022922",
+      "name": "arrow_left_line",
+      "font_class": "arrow_left_line",
+      "unicode": "e718",
+      "unicode_decimal": 59160
+    },
+    {
+      "icon_id": "34022925",
+      "name": "arrow_right_line",
+      "font_class": "arrow_right_line",
+      "unicode": "e719",
+      "unicode_decimal": 59161
+    },
+    {
+      "icon_id": "34022928",
+      "name": "arrow_up_line",
+      "font_class": "arrow_up_line",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "34023423",
+      "name": "check_line",
+      "font_class": "check_line",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "34023434",
+      "name": "close_line",
+      "font_class": "close_line",
+      "unicode": "e72c",
+      "unicode_decimal": 59180
+    },
+    {
+      "icon_id": "34023639",
+      "name": "copy_2_line",
+      "font_class": "copy_2_line",
+      "unicode": "e738",
+      "unicode_decimal": 59192
+    },
+    {
+      "icon_id": "34023663",
+      "name": "download_line",
+      "font_class": "download_line",
+      "unicode": "e740",
+      "unicode_decimal": 59200
+    },
+    {
+      "icon_id": "34023668",
+      "name": "edit_2_line",
+      "font_class": "edit_2_line",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    },
+    {
+      "icon_id": "34023678",
+      "name": "eye_line",
+      "font_class": "eye_line",
+      "unicode": "e745",
+      "unicode_decimal": 59205
+    },
+    {
+      "icon_id": "34023873",
+      "name": "fullscreen_arrow_exit_line",
+      "font_class": "fullscreen_arrow_exit_line",
+      "unicode": "e74f",
+      "unicode_decimal": 59215
+    },
+    {
+      "icon_id": "34025655",
+      "name": "eye_close_line",
+      "font_class": "eye_close_line",
+      "unicode": "e7e9",
+      "unicode_decimal": 59369
+    }
+  ]
+}

@@ -7,12 +7,15 @@
   color: #aaa;
   margin: 0 20px;
 }
-.vp-doc._guide_quickstart .line-numbers-mode {
-  padding-left: 0 !important;
+
+.common-btn-box {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.vp-doc._guide_quickstart .line-numbers-mode .line-numbers-wrapper {
-  display: none;
-}
-.vp-doc._guide_quickstart .line-numbers-mode .vp-code-light .line span {
-  color: #fff !important;
+.common-btn-box .y-icon {
+  font-size: 32px;
+  margin: 12px 0 8px;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
 }

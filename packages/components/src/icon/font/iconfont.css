@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3891816 */
+  src: url('iconfont.woff2?t=1676195076236') format('woff2'),
+       url('iconfont.woff?t=1676195076236') format('woff'),
+       url('iconfont.ttf?t=1676195076236') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add_line:before {
+  content: "\e715";
+}
+
+.icon-alert_line:before {
+  content: "\e716";
+}
+
+.icon-arrow_down_line:before {
+  content: "\e717";
+}
+
+.icon-arrow_left_line:before {
+  content: "\e718";
+}
+
+.icon-arrow_right_line:before {
+  content: "\e719";
+}
+
+.icon-arrow_up_line:before {
+  content: "\e71a";
+}
+
+.icon-check_line:before {
+  content: "\e729";
+}
+
+.icon-close_line:before {
+  content: "\e72c";
+}
+
+.icon-copy_2_line:before {
+  content: "\e738";
+}
+
+.icon-download_line:before {
+  content: "\e740";
+}
+
+.icon-edit_2_line:before {
+  content: "\e741";
+}
+
+.icon-eye_line:before {
+  content: "\e745";
+}
+
+.icon-fullscreen_arrow_exit_line:before {
+  content: "\e74f";
+}
+
+.icon-eye_close_line:before {
+  content: "\e7e9";
+}
+
