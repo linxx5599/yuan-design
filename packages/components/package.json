@@ -1,0 +1,24 @@
+{
+  "name": "yuan-design",
+  "version": "1.0.0",
+  "description": "yuan-design",
+  "main": "lib/components/index.js",
+  "module": "es/components/index.js",
+  "scripts": {
+    "build": "rimraf ./lib && rimraf ./es && vite build"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "keywords": [
+    "yuan-design",
+    "vue3组件库"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@yuan-design/utils": "workspace:^1.0.0"
+  },
+  "typings": "lib/index.d.ts"
+}
