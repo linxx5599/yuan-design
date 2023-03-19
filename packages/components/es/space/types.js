@@ -10,7 +10,7 @@ const spaceProps = {
   direction: {
     type: String,
     values: directions,
-    default: "middle"
+    default: "horizontal"
   },
   size: {
     type: String,

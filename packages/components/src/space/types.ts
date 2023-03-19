@@ -18,7 +18,7 @@ export const spaceProps = {
   direction: {
     type: String as PropType<directionType>,
     values: directions,
-    default: "middle"
+    default: "horizontal"
   },
   size: {
     type: String as PropType<spaceSizeType | number>,
