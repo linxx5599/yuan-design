@@ -23,7 +23,7 @@ export const spaceProps = {
   size: {
     type: String as PropType<spaceSizeType | number>,
     values: spaceSize,
-    default: false
+    default: "middle"
   }
 };
 

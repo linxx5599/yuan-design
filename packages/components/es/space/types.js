@@ -15,7 +15,7 @@ const spaceProps = {
   size: {
     type: String,
     values: spaceSize,
-    default: false
+    default: "middle"
   }
 };
 export {
