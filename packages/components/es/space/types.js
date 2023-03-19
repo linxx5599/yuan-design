@@ -1,6 +1,6 @@
 const aligns = ["start", "end", "center", "baseline"];
 const directions = ["vertical", "horizontal"];
-const sizes = ["small", "middle", "large"];
+const spaceSize = ["small", "middle", "large"];
 const spaceProps = {
   align: {
     type: String,
@@ -14,13 +14,13 @@ const spaceProps = {
   },
   size: {
     type: String,
-    values: sizes,
+    values: spaceSize,
     default: false
   }
 };
 export {
   aligns,
   directions,
-  sizes,
-  spaceProps
+  spaceProps,
+  spaceSize
 };
