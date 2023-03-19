@@ -1,5 +1,5 @@
 <template>
-  <y-space>
+  <y-space wrap>
     <y-button
       v-for="btn in btns"
       :key="btn.title"

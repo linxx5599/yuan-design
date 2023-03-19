@@ -12,7 +12,10 @@
   &.y-space-align-baseline {
     align-items: baseline;
   }
-  .y-space-vertical {
+  &.y-space-vertical {
     flex-direction: column;
+  }
+  &.y-space-wrap:not(&.y-space-vertical) {
+    flex-wrap: wrap;
   }
 }

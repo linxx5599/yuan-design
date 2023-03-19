@@ -16,6 +16,11 @@ const spaceProps = {
     type: String,
     values: spaceSize,
     default: "middle"
+  },
+  wrap: {
+    type: Boolean,
+    values: [true, false],
+    default: false
   }
 };
 export {

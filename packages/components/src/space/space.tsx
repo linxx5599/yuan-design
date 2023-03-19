@@ -26,6 +26,7 @@ export default defineComponent({
       const gap = (sizeMap[gapSize] || gapSize) + "px";
       const calssArr = ["y-space", `y-space-align-${align}"`];
       if (props.direction === "vertical") calssArr.push(`y-space-vertical`);
+      if (props.wrap) calssArr.push(`y-space-wrap`);
       return {
         class: calssArr,
         style: {

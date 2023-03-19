@@ -24,6 +24,8 @@ const Space = /* @__PURE__ */ defineComponent({
       const calssArr = ["y-space", `y-space-align-${align}"`];
       if (props.direction === "vertical")
         calssArr.push(`y-space-vertical`);
+      if (props.wrap)
+        calssArr.push(`y-space-wrap`);
       return {
         class: calssArr,
         style: {

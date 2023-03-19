@@ -7,6 +7,7 @@ declare const _default: {
             size: number | import("./types").spaceSizeType;
             align: import("./types").alignType;
             direction: import("./types").directionType;
+            wrap: boolean;
         }> & Omit<Readonly<import("vue").ExtractPropTypes<{
             align: {
                 type: import("vue").PropType<import("./types").alignType>;
@@ -23,7 +24,12 @@ declare const _default: {
                 values: string[];
                 default: string;
             };
-        }>> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "size" | "align" | "direction">;
+            wrap: {
+                type: BooleanConstructor;
+                values: boolean[];
+                default: boolean;
+            };
+        }>> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "size" | "align" | "direction" | "wrap">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -53,10 +59,16 @@ declare const _default: {
                 values: string[];
                 default: string;
             };
+            wrap: {
+                type: BooleanConstructor;
+                values: boolean[];
+                default: boolean;
+            };
         }>>, (() => JSX.Element) | null, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, {
             size: number | import("./types").spaceSizeType;
             align: import("./types").alignType;
             direction: import("./types").directionType;
+            wrap: boolean;
         }> & {
             beforeCreate?: ((() => void) | (() => void)[]) | undefined;
             created?: ((() => void) | (() => void)[]) | undefined;
@@ -93,6 +105,11 @@ declare const _default: {
             values: string[];
             default: string;
         };
+        wrap: {
+            type: BooleanConstructor;
+            values: boolean[];
+            default: boolean;
+        };
     }>> & import("vue").ShallowUnwrapRef<() => JSX.Element> & {} & import("vue").ComponentCustomProperties;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -113,9 +130,15 @@ declare const _default: {
         values: string[];
         default: string;
     };
+    wrap: {
+        type: BooleanConstructor;
+        values: boolean[];
+        default: boolean;
+    };
 }>>, (() => JSX.Element) | null, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, {
     size: number | import("./types").spaceSizeType;
     align: import("./types").alignType;
     direction: import("./types").directionType;
+    wrap: boolean;
 }> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Plugin;
 export default _default;

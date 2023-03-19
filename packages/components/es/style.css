@@ -3,6 +3,22 @@ html {
   --y-primary-color: #1890ff;
   --y-wave-animation-width: 6px;
 }
+.y-icon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  --y-wave-shadow-color: #2296ff;
+  --y-primary-color: #1890ff;
+  --y-wave-animation-width: 6px;
+}
 .y-btn {
   line-height: 1.499;
   position: relative;
@@ -143,22 +159,6 @@ html {
   --y-primary-color: #1890ff;
   --y-wave-animation-width: 6px;
 }
-.y-icon {
-  display: inline-block;
-  color: inherit;
-  font-style: normal;
-  line-height: 0;
-  text-align: center;
-  text-transform: none;
-  vertical-align: -0.125em;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-html {
-  --y-wave-shadow-color: #2296ff;
-  --y-primary-color: #1890ff;
-  --y-wave-animation-width: 6px;
-}
 .y-space {
   display: inline-flex;
 }
@@ -174,6 +174,9 @@ html {
 .y-space.y-space-align-baseline {
   align-items: baseline;
 }
-.y-space .y-space-vertical {
+.y-space.y-space-vertical {
   flex-direction: column;
+}
+.y-space.y-space-wrap:not(.y-space.y-space-vertical) {
+  flex-wrap: wrap;
 }

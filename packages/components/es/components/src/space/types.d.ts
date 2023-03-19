@@ -21,5 +21,10 @@ export declare const spaceProps: {
         values: string[];
         default: string;
     };
+    wrap: {
+        type: BooleanConstructor;
+        values: boolean[];
+        default: boolean;
+    };
 };
 export type SpaceProps = ExtractPropTypes<typeof spaceProps>;
