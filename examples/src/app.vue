@@ -1,6 +1,8 @@
 <template>
-  <YButton />
+  <Button />
+  <Space />
 </template>
 <script lang="ts" setup>
-import YButton from "@examples/button/index.vue";
+import Button from "@examples/button/index.vue";
+import Space from "@examples/space/index.vue";
 </script>
