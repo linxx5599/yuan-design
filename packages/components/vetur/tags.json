@@ -1,0 +1,6 @@
+{
+  "y-button": {
+    "attributes": ["type", "size", "disabled", "loading", "icon"],
+    "subtabs": ":span"
+  }
+}

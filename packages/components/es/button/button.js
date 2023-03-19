@@ -1,10 +1,10 @@
 import { defineComponent, ref, computed, createVNode, mergeProps } from "vue";
-import { buttonProps } from "./types.js";
+import { buttonProps, ButtonType, ButtonSize } from "./types.js";
 import { flattenChildren } from "../utils/index.js";
 import "./style/index.less.js";
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
-const button = /* @__PURE__ */ defineComponent({
+const Button = /* @__PURE__ */ defineComponent({
   name: "YButton",
   inheritAttrs: false,
   __YUAN_BUTTON: true,
@@ -34,10 +34,10 @@ const button = /* @__PURE__ */ defineComponent({
       let classs = {
         "y-btn": true
       };
-      if (props.type !== "default" && buttonProps.type.values.includes(props.type)) {
+      if (props.type !== "default" && ButtonType.includes(props.type)) {
         classs[`y-btn-${props.type}`] = true;
       }
-      if (props.size !== "middle" && buttonProps.size.values.includes(props.size)) {
+      if (props.size !== "middle" && ButtonSize.includes(props.size)) {
         const btnKey = `y-btn-${props.size === "large" ? "lg" : "sm"}`;
         classs[btnKey] = true;
       }
@@ -70,5 +70,5 @@ const button = /* @__PURE__ */ defineComponent({
   }
 });
 export {
-  button as default
+  Button as default
 };

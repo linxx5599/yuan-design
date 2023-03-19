@@ -39,7 +39,7 @@
       left: 0;
       display: block;
       border-radius: inherit;
-      box-shadow: 0 0 0 0 @primary-color;
+      box-shadow: 0 0 0 0 var(--y-primary-color);
       box-shadow: 0 0 0 0 var(--y-wave-shadow-color);
       opacity: 0.2;
       -webkit-animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1),
@@ -65,8 +65,8 @@
 }
 .y-btn-primary {
   color: #fff;
-  background-color: @primary-color;
-  border-color: @primary-color;
+  background-color: var(--y-primary-color);
+  border-color: var(--y-primary-color);
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
   &:hover,
@@ -106,7 +106,7 @@
 }
 
 .y-btn-link {
-  color: @primary-color;
+  color: var(--y-primary-color);
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -135,7 +135,7 @@
 
 @keyframes waveEffect {
   100% {
-    box-shadow: 0 0 0 @wave-animation-width var(--y-wave-shadow-color);
+    box-shadow: 0 0 0 var(--y-wave-animation-width) var(--y-wave-shadow-color);
   }
 }
 

@@ -1,18 +1,12 @@
-import button from "../button/button.js";
-import icon from "../icon/icon.js";
-const withInstall = (comp) => {
-  comp.install = (app) => {
-    app.component(comp.name, comp);
-  };
-  return comp;
-};
-const Button = withInstall(button);
-const Icon = withInstall(icon);
+import "../button/index.js";
+import "../icon/index.js";
+import Button from "../button/button.js";
+import Icon from "../icon/icon.js";
 const components = [Button, Icon];
 const index = {
   install(app) {
     components.forEach((component) => {
-      app.component(component.name, component);
+      app.use(component);
     });
   }
 };

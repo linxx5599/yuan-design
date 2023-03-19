@@ -1,6 +1,6 @@
-import type { App, Plugin } from "vue";
-declare const Button: Plugin;
-declare const Icon: Plugin;
+import type { App } from "vue";
+import Button from "./src/button";
+import Icon from "./src/icon";
 export { Button, Icon };
 declare const _default: {
     install(app: App): void;

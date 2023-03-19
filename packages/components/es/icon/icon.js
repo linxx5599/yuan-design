@@ -2,7 +2,7 @@ import { defineComponent, computed, createVNode } from "vue";
 import "./style/index.less.js";
 import "./font/iconfont.js";
 import { iconProps } from "./types.js";
-const icon = /* @__PURE__ */ defineComponent({
+const Icon = /* @__PURE__ */ defineComponent({
   name: "YIcon",
   inheritAttrs: false,
   __YUAN_ICON: true,
@@ -29,5 +29,5 @@ const icon = /* @__PURE__ */ defineComponent({
   }
 });
 export {
-  icon as default
+  Icon as default
 };

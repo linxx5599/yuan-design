@@ -1,0 +1,7 @@
+{
+  "type": ["default", "primary", "ghost", "text", "dashed", "danger", "link"],
+  "size": ["large", "middle", "small"],
+  "disabled": [true, false],
+  "loading": [true, false],
+  "icon": ""
+}

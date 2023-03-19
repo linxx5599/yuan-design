@@ -1,5 +1,13 @@
-import { ExtractPropTypes } from "vue";
+import { ExtractPropTypes, PropType } from "vue";
 
+export type ButtonTypes =
+  | "link"
+  | "default"
+  | "primary"
+  | "ghost"
+  | "dashed"
+  | "text"
+  | "danger";
 export const ButtonType = [
   "default",
   "primary",
@@ -10,29 +18,30 @@ export const ButtonType = [
   "link"
 ];
 
+export type ButtonSizes = "large" | "middle" | "small";
 export const ButtonSize = ["large", "middle", "small"];
 
+export type ButtonBooleans = true | false;
 export const ButtonBoolean = [true, false];
-
 
 export const buttonProps = {
   type: {
-    type: String,
+    type: String as PropType<ButtonTypes>,
     values: ButtonType,
     default: "default"
   },
   size: {
-    type: String,
+    type: String as PropType<ButtonSizes>,
     values: ButtonSize,
     default: "middle"
   },
   disabled: {
-    type: Boolean,
+    type: Boolean as  PropType<ButtonBooleans>,
     values: ButtonBoolean,
     default: false
   },
   loading: {
-    type: Boolean,
+    type: Boolean as  PropType<ButtonBooleans>,
     values: ButtonBoolean,
     default: false
   },

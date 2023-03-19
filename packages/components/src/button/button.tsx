@@ -1,6 +1,6 @@
 import { computed, defineComponent, ref } from "vue";
 import type { VNode } from "vue";
-import { buttonProps } from "./types";
+import { buttonProps, ButtonType, ButtonSize } from "./types";
 import { flattenChildren } from "@yuan-design/utils";
 
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
@@ -40,13 +40,13 @@ export default defineComponent({
       };
       if (
         props.type !== "default" &&
-        buttonProps.type.values.includes(props.type)
+        ButtonType.includes(props.type)
       ) {
         classs[`y-btn-${props.type}`] = true;
       }
       if (
         props.size !== "middle" &&
-        buttonProps.size.values.includes(props.size)
+        ButtonSize.includes(props.size)
       ) {
         const btnKey = `y-btn-${props.size === 'large' ? 'lg' : 'sm'}`
         classs[btnKey] = true;

@@ -9,7 +9,8 @@
   },
   "files": [
     "es",
-    "lib"
+    "lib",
+    "vetur"
   ],
   "keywords": [
     "yuan-design",
@@ -20,5 +21,9 @@
   "dependencies": {
     "@yuan-design/utils": "workspace:^1.0.0"
   },
-  "typings": "lib/index.d.ts"
+  "typings": "lib/components/index.d.ts",
+  "volar": {
+    "tags": "vetur/tags.json",
+    "attributes": "vetur/attributes.json"
+  }
 }
