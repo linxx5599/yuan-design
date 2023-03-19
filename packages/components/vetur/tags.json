@@ -4,7 +4,7 @@
     "subtabs": ":span"
   },
   "y-space": {
-    "spaceaAtributes": ["align", "direction", "size", "wrap"],
+    "attributes": ["align", "direction", "size", "wrap"],
     "subtabs": ":span"
   }
 }

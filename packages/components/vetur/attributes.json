@@ -3,5 +3,8 @@
   "size": ["large", "middle", "small"],
   "disabled": [true, false],
   "loading": [true, false],
-  "icon": ""
+  "icon": "",
+  "align": ["start", "end", "center", "baseline"],
+  "direction": ["vertical", "horizontal"],
+  "wrap": [true, false]
 }
