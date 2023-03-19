@@ -2,5 +2,9 @@
   "y-button": {
     "attributes": ["type", "size", "disabled", "loading", "icon"],
     "subtabs": ":span"
+  },
+  "y-space": {
+    "spaceaAtributes": ["align", "direction", "size", "wrap"],
+    "subtabs": ":span"
   }
 }

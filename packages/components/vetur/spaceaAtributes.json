@@ -1,0 +1,6 @@
+{
+  "align": ["start", "end", "center", "baseline"],
+  "direction": ["vertical", "horizontal"],
+  "size": ["small", "middle", "large"],
+  "wrap": [true, false]
+}
