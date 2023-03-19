@@ -6,8 +6,8 @@ export const aligns = ["start", "end", "center", "baseline"];
 export type directionType = "vertical" | "horizontal";
 export const directions = ["vertical", "horizontal"];
 
-export type sizeType = "small" | "middle" | "large";
-export const sizes = ["small", "middle", "large"];
+export type spaceSizeType = "small" | "middle" | "large";
+export const spaceSize = ["small", "middle", "large"];
 
 export const spaceProps = {
   align: {
@@ -21,8 +21,8 @@ export const spaceProps = {
     default: "middle"
   },
   size: {
-    type: String as PropType<sizeType | number>,
-    values: sizes,
+    type: String as PropType<spaceSizeType | number>,
+    values: spaceSize,
     default: false
   }
 };

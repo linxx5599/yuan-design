@@ -1,5 +1,5 @@
 <template>
-  <div class="common-btn-box">
+  <y-space>
     <y-button
       v-for="btn in btns"
       :key="btn.title"
@@ -8,16 +8,16 @@
       :size="btn.size"
       @click="click(btn)"
     >
-      {{ btn.title }} {{ btn.disabled ? '(disabled)' : '' }}
+      {{ btn.title }} {{ btn.disabled ? "(disabled)" : "" }}
     </y-button>
-  </div>
+  </y-space>
 </template>
 <script lang="ts" setup>
 interface btnT {
   title: String;
   type: String;
   disabled?: Boolean;
-  size?: String
+  size?: String;
 }
 const btns: Array<btnT> = [
   { title: "Defalut", type: "defalut" },
@@ -35,11 +35,3 @@ const click = (btn: btnT) => {
   console.log(btn);
 };
 </script>
-
-<style lang="less" scoped>
-.common-btn-box {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-</style>

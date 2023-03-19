@@ -1,13 +1,9 @@
-import {
-  computed,
-  defineComponent,
-  VNode,
-  RendererNode,
-  RendererElement
-} from "vue";
-import { spaceProps, aligns, sizes } from "./types";
+import { computed, defineComponent } from "vue";
+import { spaceProps, aligns, spaceSize } from "./types";
 
 import "./style/index.less";
+import { flattenChildren } from "@yuan-design/utils";
+
 export default defineComponent({
   name: "YSpace",
   inheritAttrs: false,
@@ -22,7 +18,7 @@ export default defineComponent({
         large: 16
       };
       const propSize: any = props.size;
-      const gapSize = sizes.includes(propSize)
+      const gapSize = spaceSize.includes(propSize)
         ? propSize
         : isNaN(propSize)
         ? "middle"
@@ -37,12 +33,15 @@ export default defineComponent({
         }
       };
     });
-    const childs: VNode<RendererNode, RendererElement>[] | undefined =
-      slots?.default?.() || [];
+    const slotsDefaults = slots?.default?.() || [];
+    if (slotsDefaults.length === 0) {
+      return null;
+    }
+    const childs = flattenChildren(slotsDefaults)
 
     return () => (
       <div {...attrsProps.value}>
-        {childs.map((chid) => {
+        {childs.map((chid: any) => {
           return <div class="y-space-item">{chid}</div>;
         })}
       </div>
