@@ -42,7 +42,7 @@ export default defineComponent({
 
     return () => (
       <div {...attrsProps.value}>
-        {childs.map((chid: any) => {
+        {childs.map((chid) => {
           return <div class="y-space-item">{chid}</div>;
         })}
       </div>
