@@ -1,11 +1,9 @@
 <template>
-  <div class="common-btn-box">
-    <y-space>
-      <y-button v-for="btn in btns" :key="btn.title" :type="btn.type">
-        {{ btn.title }} {{ btn.disabled ? "(disabled)" : "" }}
-      </y-button>
-    </y-space>
-  </div>
+  <y-space>
+    <y-button v-for="btn in btns" :key="btn.title" :type="btn.type">
+      {{ btn.title }} {{ btn.disabled ? "(disabled)" : "" }}
+    </y-button>
+  </y-space>
 </template>
 <script lang="ts" setup name="Button">
 interface btnT {
