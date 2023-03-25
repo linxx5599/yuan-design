@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "yuan-design": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "vue-router": "^4.1.6"
   }
 }

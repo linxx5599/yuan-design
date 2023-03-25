@@ -46,9 +46,12 @@ importers:
 
   examples:
     specifiers:
+      vue-router: ^4.1.6
       yuan-design: workspace:^1.0.0
     dependencies:
       yuan-design: link:../packages/components
+    devDependencies:
+      vue-router: 4.1.6
 
   examples/components:
     specifiers:
@@ -3478,6 +3481,14 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.47
+    dev: true
+
+  /vue-router/4.1.6:
+    resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.5.0
     dev: true
 
   /vue/3.2.36:
