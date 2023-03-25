@@ -6,7 +6,7 @@
     </y-input>
     <br />
     <br />
-    <y-input prefix="￥" suffix="RMB" />
+    <y-input disabled prefix="￥" suffix="RMB" />
   </div>
 </template>
 <script lang="ts">

@@ -12,10 +12,7 @@ export default defineComponent({
   __YUAN_INPUT: true,
   props: inputProps,
   emits: ["update:value"],
-  setup(props, { slots, emit, expose }) {
-    const { placeholder, type } = props;
-    const inputRef = ref();
-
+  setup(props, { slots, emit }) {
     const modelValue = computed({
       get() {
         return props.value === undefined ? props.defaultValue : props.value;
@@ -43,13 +40,6 @@ export default defineComponent({
         }
       }
     );
-    const blur = () => {
-      inputRef.value?.blur();
-    };
-    expose({
-      blur,
-      input: inputRef
-    });
 
     const onFocus: FocusEventHandler = (e) => {
       focused.value = true;
@@ -71,7 +61,7 @@ export default defineComponent({
       setModelValue(newVal);
     };
 
-    const inputDomProps = {
+    const inputFnProps = {
       onChange: (e: any) => {
         handleChange(e);
         props?.onChange?.(e);
@@ -81,17 +71,21 @@ export default defineComponent({
         props?.onInput?.(e);
       },
       onFocus,
-      onBlur,
-      type,
-      placeholder,
-      ref: inputRef,
-      disabled: props.disabled,
-      class: { "y-input": true }
+      onBlur
     };
-    const inputDom = <input {...inputDomProps} />;
+    const inputDomProps = computed(() => {
+      return {
+        type: props.type,
+        placeholder: props.placeholder,
+        disabled: props.disabled,
+        class: { "y-input": true }
+      };
+    });
+
+    const inputDom = () => <input {...inputFnProps} {...inputDomProps.value} />;
     let prefix = slots?.prefix?.() || props.prefix || null;
     let suffix = slots?.suffix?.() || props.suffix || null;
-    if (!prefix && !suffix) return () => inputDom;
+    if (!prefix && !suffix) return inputDom;
     const attrsProps = computed(() => {
       return {
         disabled: props.disabled,
@@ -103,7 +97,7 @@ export default defineComponent({
     return () => (
       <span {...attrsProps.value}>
         {prefix ? <span class="y-input-prefix">{prefix}</span> : prefix}
-        {inputDom}
+        {inputDom()}
         {suffix ? <span class="y-input-suffix">{suffix}</span> : suffix}
       </span>
     );

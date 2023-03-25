@@ -1,4 +1,4 @@
-import { defineComponent, ref, computed, watch, createVNode } from "vue";
+import { defineComponent, computed, ref, watch, createVNode, mergeProps } from "vue";
 import { inputProps } from "./types.js";
 import "./style/index.less.js";
 const Input = /* @__PURE__ */ defineComponent({
@@ -9,15 +9,9 @@ const Input = /* @__PURE__ */ defineComponent({
   emits: ["update:value"],
   setup(props, {
     slots,
-    emit,
-    expose
+    emit
   }) {
     var _a, _b;
-    const {
-      placeholder,
-      type
-    } = props;
-    const inputRef = ref();
     const modelValue = computed({
       get() {
         return props.value === void 0 ? props.defaultValue : props.value;
@@ -37,14 +31,6 @@ const Input = /* @__PURE__ */ defineComponent({
       if (props.disabled) {
         focused.value = false;
       }
-    });
-    const blur = () => {
-      var _a2;
-      (_a2 = inputRef.value) == null ? void 0 : _a2.blur();
-    };
-    expose({
-      blur,
-      input: inputRef
     });
     const onFocus = (e) => {
       var _a2;
@@ -70,7 +56,7 @@ const Input = /* @__PURE__ */ defineComponent({
       const newVal = e.target.value;
       setModelValue(newVal);
     };
-    const inputDomProps = {
+    const inputFnProps = {
       onChange: (e) => {
         var _a2;
         handleChange(e);
@@ -82,20 +68,23 @@ const Input = /* @__PURE__ */ defineComponent({
         (_a2 = props == null ? void 0 : props.onInput) == null ? void 0 : _a2.call(props, e);
       },
       onFocus,
-      onBlur,
-      type,
-      placeholder,
-      ref: inputRef,
-      disabled: props.disabled,
-      class: {
-        "y-input": true
-      }
+      onBlur
     };
-    const inputDom = createVNode("input", inputDomProps, null);
+    const inputDomProps = computed(() => {
+      return {
+        type: props.type,
+        placeholder: props.placeholder,
+        disabled: props.disabled,
+        class: {
+          "y-input": true
+        }
+      };
+    });
+    const inputDom = () => createVNode("input", mergeProps(inputFnProps, inputDomProps.value), null);
     let prefix = ((_a = slots == null ? void 0 : slots.prefix) == null ? void 0 : _a.call(slots)) || props.prefix || null;
     let suffix = ((_b = slots == null ? void 0 : slots.suffix) == null ? void 0 : _b.call(slots)) || props.suffix || null;
     if (!prefix && !suffix)
-      return () => inputDom;
+      return inputDom;
     const attrsProps = computed(() => {
       return {
         disabled: props.disabled,
@@ -106,7 +95,7 @@ const Input = /* @__PURE__ */ defineComponent({
     });
     return () => createVNode("span", attrsProps.value, [prefix ? createVNode("span", {
       "class": "y-input-prefix"
-    }, [prefix]) : prefix, inputDom, suffix ? createVNode("span", {
+    }, [prefix]) : prefix, inputDom(), suffix ? createVNode("span", {
       "class": "y-input-suffix"
     }, [suffix]) : suffix]);
   }

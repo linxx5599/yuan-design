@@ -1,5 +1,7 @@
 <template>
   <y-input v-model:value="value" placeholder="Basic usage" />
+  <br />
+  <br />
   <y-input disabled placeholder="disabled" />
 </template>
 <script lang="ts">
