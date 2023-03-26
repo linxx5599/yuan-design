@@ -6,5 +6,5 @@
 </template>
 <script lang="ts" setup name="Input">
 import { ref } from "vue";
-const value = ref<string>("");
+const value = ref<string>("222");
 </script>

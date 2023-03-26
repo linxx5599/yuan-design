@@ -84,7 +84,8 @@ export default defineComponent({
         type: props.type,
         placeholder: props.placeholder,
         disabled: props.disabled,
-        class: { [namespace.n()]: true }
+        class: { [namespace.n()]: true },
+        value: modelValue.value
       };
     });
 
@@ -102,9 +103,17 @@ export default defineComponent({
     });
     return () => (
       <span {...attrsProps.value}>
-        {prefix ? <span class={namespace.fix('prefix')}>{prefix}</span> : prefix}
+        {prefix ? (
+          <span class={namespace.fix("prefix")}>{prefix}</span>
+        ) : (
+          prefix
+        )}
         {inputDom()}
-        {suffix ? <span class={namespace.fix('suffix')}>{suffix}</span> : suffix}
+        {suffix ? (
+          <span class={namespace.fix("suffix")}>{suffix}</span>
+        ) : (
+          suffix
+        )}
       </span>
     );
   }
