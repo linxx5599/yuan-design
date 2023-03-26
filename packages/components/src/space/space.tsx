@@ -2,7 +2,7 @@ import { computed, defineComponent } from "vue";
 import { spaceProps, aligns, spaceSize } from "./types";
 
 import "./style/index.less";
-import { flattenChildren } from "@yuan-design/utils";
+import { flattenChildren, CreateNamespace } from "@yuan-design/utils";
 
 export default defineComponent({
   name: "YSpace",
@@ -10,6 +10,8 @@ export default defineComponent({
   __YUAN_SPACE: true,
   props: spaceProps,
   setup(props, { slots }) {
+    const namespace = new CreateNamespace({ comCls: "space" });
+
     const attrsProps = computed(() => {
       const align = aligns.includes(props.align) ? props.align : "center";
       const sizeMap: any = {
@@ -24,9 +26,10 @@ export default defineComponent({
         ? "middle"
         : propSize || "middle";
       const gap = (sizeMap[gapSize] || gapSize) + "px";
-      const calssArr = ["y-space", `y-space-align-${align}"`];
-      if (props.direction === "vertical") calssArr.push(`y-space-vertical`);
-      if (props.wrap) calssArr.push(`y-space-wrap`);
+      const calssArr = [namespace.n(), namespace.fix(`align-${align}`)];
+      if (props.direction === "vertical")
+        calssArr.push(namespace.fix("vertical"));
+      if (props.wrap) calssArr.push(namespace.fix("wrap"));
       return {
         class: calssArr,
         style: {
@@ -38,12 +41,12 @@ export default defineComponent({
     if (slotsDefaults.length === 0) {
       return null;
     }
-    const childs = flattenChildren(slotsDefaults)
+    const childs = flattenChildren(slotsDefaults);
 
     return () => (
       <div {...attrsProps.value}>
         {childs.map((chid) => {
-          return <div class="y-space-item">{chid}</div>;
+          return <div class={namespace.fix("item")}>{chid}</div>;
         })}
       </div>
     );

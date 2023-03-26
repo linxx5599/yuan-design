@@ -1,5 +1,6 @@
 import { defineComponent, computed, ref, watch, createVNode, mergeProps } from "vue";
 import { inputProps } from "./types.js";
+import createNamespace from "../utils/CreateNamespace.js";
 import "./style/index.less.js";
 const Input = /* @__PURE__ */ defineComponent({
   name: "YInput",
@@ -70,13 +71,16 @@ const Input = /* @__PURE__ */ defineComponent({
       onFocus,
       onBlur
     };
+    const namespace = new createNamespace({
+      comCls: "input"
+    });
     const inputDomProps = computed(() => {
       return {
         type: props.type,
         placeholder: props.placeholder,
         disabled: props.disabled,
         class: {
-          "y-input": true
+          [namespace.n()]: true
         }
       };
     });
@@ -89,14 +93,14 @@ const Input = /* @__PURE__ */ defineComponent({
       return {
         disabled: props.disabled,
         class: {
-          "y-input-affix-wrapper": true
+          [namespace.fix("affix-wrapper")]: true
         }
       };
     });
     return () => createVNode("span", attrsProps.value, [prefix ? createVNode("span", {
-      "class": "y-input-prefix"
+      "class": namespace.fix("prefix")
     }, [prefix]) : prefix, inputDom(), suffix ? createVNode("span", {
-      "class": "y-input-suffix"
+      "class": namespace.fix("suffix")
     }, [suffix]) : suffix]);
   }
 });

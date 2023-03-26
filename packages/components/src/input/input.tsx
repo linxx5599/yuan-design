@@ -4,6 +4,9 @@ import type {
   ChangeEvent,
   FocusEventHandler
 } from "@yuan-design/utils/EventInterface";
+
+import { CreateNamespace } from "@yuan-design/utils";
+
 import "./style/index.less";
 
 export default defineComponent({
@@ -73,12 +76,15 @@ export default defineComponent({
       onFocus,
       onBlur
     };
+
+    const namespace = new CreateNamespace({ comCls: "input" });
+
     const inputDomProps = computed(() => {
       return {
         type: props.type,
         placeholder: props.placeholder,
         disabled: props.disabled,
-        class: { "y-input": true }
+        class: { [namespace.n()]: true }
       };
     });
 
@@ -90,15 +96,15 @@ export default defineComponent({
       return {
         disabled: props.disabled,
         class: {
-          "y-input-affix-wrapper": true
+          [namespace.fix("affix-wrapper")]: true
         }
       };
     });
     return () => (
       <span {...attrsProps.value}>
-        {prefix ? <span class="y-input-prefix">{prefix}</span> : prefix}
+        {prefix ? <span class={namespace.fix('prefix')}>{prefix}</span> : prefix}
         {inputDom()}
-        {suffix ? <span class="y-input-suffix">{suffix}</span> : suffix}
+        {suffix ? <span class={namespace.fix('suffix')}>{suffix}</span> : suffix}
       </span>
     );
   }

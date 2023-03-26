@@ -32,13 +32,13 @@ const Button = /* @__PURE__ */ defineComponent({
     const kids = children.map((child) => insertSpace(child, false));
     const classBtn = computed(() => {
       let classs = {
-        "y-btn": true
+        "yuan-btn": true
       };
       if (props.type !== "default" && ButtonType.includes(props.type)) {
-        classs[`y-btn-${props.type}`] = true;
+        classs[`yuan-btn-${props.type}`] = true;
       }
       if (props.size !== "middle" && ButtonSize.includes(props.size)) {
-        const btnKey = `y-btn-${props.size === "large" ? "lg" : "sm"}`;
+        const btnKey = `yuan-btn-${props.size === "large" ? "lg" : "sm"}`;
         classs[btnKey] = true;
       }
       return classs;
@@ -62,7 +62,7 @@ const Button = /* @__PURE__ */ defineComponent({
       onClick: handleClick,
       class: [classBtn.value, attrs.class],
       disabled: props.disabled,
-      "y-click-animating-without-extra-node": activeBtn.value && props.type !== "link" && !props.disabled
+      "yuan-click-animating-without-extra-node": activeBtn.value && props.type !== "link" && !props.disabled
     }));
     return () => createVNode("button", mergeProps({
       "type": "button"

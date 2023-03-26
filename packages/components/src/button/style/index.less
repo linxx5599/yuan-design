@@ -1,4 +1,4 @@
-.y-btn {
+.yuan-btn {
   line-height: 1.499;
   position: relative;
   display: inline-block;
@@ -31,7 +31,7 @@
     &:hover {
       text-decoration: none;
     }
-    &[y-click-animating-without-extra-node="true"]:after {
+    &[yuan-click-animating-without-extra-node="true"]:after {
       position: absolute;
       top: 0;
       right: 0;
@@ -39,8 +39,8 @@
       left: 0;
       display: block;
       border-radius: inherit;
-      box-shadow: 0 0 0 0 var(--y-primary-color);
-      box-shadow: 0 0 0 0 var(--y-wave-shadow-color);
+      box-shadow: 0 0 0 0 var(--yuan-primary-color);
+      box-shadow: 0 0 0 0 var(--yuan-wave-shadow-color);
       opacity: 0.2;
       -webkit-animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1),
         waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
@@ -63,10 +63,10 @@
     box-shadow: none;
   }
 }
-.y-btn-primary {
+.yuan-btn-primary {
   color: #fff;
-  background-color: var(--y-primary-color);
-  border-color: var(--y-primary-color);
+  background-color: var(--yuan-primary-color);
+  border-color: var(--yuan-primary-color);
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
   &:hover,
@@ -77,13 +77,13 @@
   }
 }
 
-.y-btn-danger {
+.yuan-btn-danger {
   color: #fff;
   background-color: #ff4d4f;
   border-color: #ff4d4f;
   text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
   box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
-  --y-wave-shadow-color: #ff4d4f;
+  --yuan-wave-shadow-color: #ff4d4f;
   &:hover,
   &:focus {
     color: #fff;
@@ -92,7 +92,7 @@
   }
 }
 
-.y-btn-dashed {
+.yuan-btn-dashed {
   color: rgba(0, 0, 0, 0.65);
   background-color: #fff;
   border-color: #d9d9d9;
@@ -105,8 +105,8 @@
   }
 }
 
-.y-btn-link {
-  color: var(--y-primary-color);
+.yuan-btn-link {
+  color: var(--yuan-primary-color);
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
@@ -119,14 +119,14 @@
   }
 }
 
-.y-btn-lg {
+.yuan-btn-lg {
   height: 40px;
   padding: 0 15px;
   font-size: 16px;
   border-radius: 4px;
 }
 
-.y-btn-sm {
+.yuan-btn-sm {
   height: 24px;
   padding: 0 7px;
   font-size: 14px;
@@ -135,7 +135,7 @@
 
 @keyframes waveEffect {
   100% {
-    box-shadow: 0 0 0 var(--y-wave-animation-width) var(--y-wave-shadow-color);
+    box-shadow: 0 0 0 var(--yuan-wave-animation-width) var(--yuan-wave-shadow-color);
   }
 }
 

@@ -12,7 +12,7 @@ const Icon = /* @__PURE__ */ defineComponent({
       return `#icon-${props.name}`;
     });
     const iconClass = computed(() => {
-      return `y-icon y-${props.name}`;
+      return `yuan-icon yuan-${props.name}`;
     });
     return () => createVNode("i", {
       "class": iconClass.value

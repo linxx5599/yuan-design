@@ -1,10 +1,11 @@
 import { isVNode, Fragment, RendererElement, RendererNode, VNode } from "vue";
+import CreateNamespace from "./CreateNamespace";
 
 export function isValid(value: any): boolean {
   return value !== undefined && value !== null && value !== "";
 }
 
-export function isEmptyElement(c:any) {
+export function isEmptyElement(c: any) {
   return (
     c &&
     (c.type === Comment ||
@@ -15,7 +16,8 @@ export function isEmptyElement(c:any) {
 
 export function flattenChildren(children: Array<any> = [], filterEmpty = true) {
   const temp = Array.isArray(children) ? children : [children];
-  const res: VNode<RendererNode, RendererElement, { [key: string]: any; }>[] = [];
+  const res: VNode<RendererNode, RendererElement, { [key: string]: any }>[] =
+    [];
   temp.forEach((child) => {
     if (Array.isArray(child)) {
       res.push(...flattenChildren(child, filterEmpty));
@@ -34,25 +36,30 @@ export function flattenChildren(children: Array<any> = [], filterEmpty = true) {
   return res;
 }
 
-
 /**
  * @example
  * const obj = { a: { b: "123" } }
  * safeGet(obj, "a.b") => 123
  * safeGet(obj, "a.b.c", "default") => default
- * @param {Object} source 
- * @param {String}path 
- * @param {any} defaultValue 
+ * @param {Object} source
+ * @param {String}path
+ * @param {any} defaultValue
  */
-export function safeGet(source:Object, path:String, defaultValue: any = undefined) {
+export function safeGet(
+  source: Object,
+  path: String,
+  defaultValue: any = undefined
+) {
   // a[3].b -> a.3.b -> [a,3,b]
-  const paths = path.replace(/\[(\d+)\]/g, ".$1").split('.')
+  const paths = path.replace(/\[(\d+)\]/g, ".$1").split(".");
   let result = source;
   for (const key of paths) {
     result = Object(result)[key];
-    if(result === undefined) {
+    if (result === undefined) {
       return defaultValue;
     }
   }
   return result;
 }
+
+export { CreateNamespace };

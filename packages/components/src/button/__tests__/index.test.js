@@ -18,7 +18,7 @@ describe('Button', () => {
         return <Button type="primary">按钮</Button>;
       },
     });
-    expect(wrapper.find('.y-btn-primary').exists()).toBe(true);
+    expect(wrapper.find('.yuan-btn-primary').exists()).toBe(true);
   });
 
   it('renders Chinese characters correctly', done => {

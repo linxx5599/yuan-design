@@ -1,4 +1,4 @@
-.y-input {
+.yuan-input {
   box-sizing: border-box;
   margin: 0;
   font-variant: tabular-nums;
@@ -19,12 +19,12 @@
   border: 1px solid #d9d9d9;
   &:not([disabled]) {
     &:hover {
-      border-color: var(--y-primary-color);
+      border-color: var(--yuan-primary-color);
       border-right-width: 1px !important;
     }
     &:focus {
-      border-color: var(--y-primary-color);
-      box-shadow: 0 0 0 2px var(--y-primary-color-outline);
+      border-color: var(--yuan-primary-color);
+      box-shadow: 0 0 0 2px var(--yuan-primary-color-outline);
       border-right-width: 1px !important;
       outline: 0;
     }
@@ -40,7 +40,7 @@
     cursor: not-allowed;
   }
 }
-.y-input-affix-wrapper {
+.yuan-input-affix-wrapper {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -56,32 +56,32 @@
   transition: all 0.3s;
   display: inline-flex;
   box-sizing: border-box;
-  > .y-input {
+  > .yuan-input {
     padding: 0;
     border: none;
     outline: none !important;
     box-shadow: none !important;
     border-right-width: unset !important;
   }
-  .y-input-prefix {
+  .yuan-input-prefix {
     display: flex;
     flex: none;
     align-items: center;
     margin-right: 4px;
   }
-  .y-input-suffix {
+  .yuan-input-suffix {
     display: flex;
     flex: none;
     align-items: center;
     margin-left: 4px;
   }
   &:hover:not([disabled=true]) {
-    border-color: var(--y-primary-color);
+    border-color: var(--yuan-primary-color);
     border-right-width: 1px !important;
   }
   &:focus-within:not([disabled=true]) {
-    border-color: var(--y-primary-color);
-    box-shadow: 0 0 0 2px var(--y-primary-color-outline);
+    border-color: var(--yuan-primary-color);
+    box-shadow: 0 0 0 2px var(--yuan-primary-color-outline);
     border-right-width: 1px !important;
     outline: 0;
   }

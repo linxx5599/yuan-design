@@ -1,7 +1,7 @@
 import { computed, defineComponent, ref } from "vue";
 import type { VNode } from "vue";
 import { buttonProps, ButtonType, ButtonSize } from "./types";
-import { flattenChildren } from "@yuan-design/utils";
+import { flattenChildren,CreateNamespace } from "@yuan-design/utils";
 
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
@@ -33,22 +33,22 @@ export default defineComponent({
     const children = flattenChildren(slots.default?.());
     const kids = children.map((child) => insertSpace(child, false));
     // const { icon = slots.icon?.() } = props;
-
+    const namespace = new CreateNamespace({ comCls: "btn" });
     const classBtn = computed(() => {
       let classs: any = {
-        "y-btn": true
+        [namespace.n()]: true
       };
       if (
         props.type !== "default" &&
         ButtonType.includes(props.type)
       ) {
-        classs[`y-btn-${props.type}`] = true;
+        classs[namespace.fix(props.type)] = true;
       }
       if (
         props.size !== "middle" &&
         ButtonSize.includes(props.size)
       ) {
-        const btnKey = `y-btn-${props.size === 'large' ? 'lg' : 'sm'}`
+        const btnKey = namespace.fix(props.size === 'large' ? 'lg' : 'sm')
         classs[btnKey] = true;
       }
       return classs;
@@ -74,7 +74,7 @@ export default defineComponent({
       onClick: handleClick,
       class: [classBtn.value, attrs.class],
       disabled: props.disabled,
-      "y-click-animating-without-extra-node":
+      "yuan-click-animating-without-extra-node":
         activeBtn.value && props.type !== "link" && !props.disabled
     }));
 

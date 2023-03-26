@@ -21,11 +21,11 @@ const Space = /* @__PURE__ */ defineComponent({
       const propSize = props.size;
       const gapSize = spaceSize.includes(propSize) ? propSize : isNaN(propSize) ? "middle" : propSize || "middle";
       const gap = (sizeMap[gapSize] || gapSize) + "px";
-      const calssArr = ["y-space", `y-space-align-${align}"`];
+      const calssArr = ["yuan-space", `yuan-space-align-${align}"`];
       if (props.direction === "vertical")
-        calssArr.push(`y-space-vertical`);
+        calssArr.push(`yuan-space-vertical`);
       if (props.wrap)
-        calssArr.push(`y-space-wrap`);
+        calssArr.push(`yuan-space-wrap`);
       return {
         class: calssArr,
         style: {
@@ -40,7 +40,7 @@ const Space = /* @__PURE__ */ defineComponent({
     const childs = flattenChildren(slotsDefaults);
     return () => createVNode("div", attrsProps.value, [childs.map((chid) => {
       return createVNode("div", {
-        "class": "y-space-item"
+        "class": "yuan-space-item"
       }, [chid]);
     })]);
   }
